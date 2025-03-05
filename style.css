@@ -71,7 +71,7 @@ section {
 /* Hero Section */
 .hero {
     min-height: 100vh;
-    background-image: linear-gradient(#085078,#85D8CE);
+    background-image: linear-gradient( 109.9deg,  rgba(0,174,182,1) 4.5%, rgba(190,223,224,1) 22.6%, rgba(217,198,225,1) 45.1%, rgba(248,178,54,1) 68.5%, rgba(235,105,17,1) 87.2% );
     padding-top: 100px;
 }
 
