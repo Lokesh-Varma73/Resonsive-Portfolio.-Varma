@@ -72,7 +72,7 @@ section {
 .hero {
     min-height: 100vh;
     padding-top: 100px;
-    background-image: linear-gradient(91.7deg, rgba(135, 206, 235, 1) 7.3%, rgba(255, 154, 139, 1) 40.3%, rgba(255, 195, 160, 1) 57.9%, rgba(255, 215, 0, 1) 93.5%);
+    background-image: linear-gradient(91.7deg, rgb(12, 165, 225) 7.3%, rgba(255, 154, 139, 1) 40.3%, rgb(235, 118, 50) 57.9%, rgb(234, 221, 150) 93.5%);
     background-size: 300% 300%;
     animation: gradientMove 6s infinite alternate ease-in-out;
 }
@@ -116,16 +116,35 @@ section {
 }
 
 .hero-image {
-    width: 570px;  /* Increased by 50% */
-    height: 555px; /* Increased by 50% */
-    object-fit: cover; /* Ensures the image maintains its aspect ratio and fills the square */
-    border-radius: 10px; /* Optional: Adds rounded corners */
-  }
-
-.hero-image:hover {
-    transform: scale(1.05);
-
+    width: 570px;
+    height: 555px;
+    object-fit: cover;
+    border-radius: 40px;
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+    box-shadow: 5px 5px 15px rgba(99, 65, 65, 0.627);
+    position: relative;
+    animation: motionEffect 5s infinite alternate ease-in-out;
 }
+
+/* Hover Effect - Image moves up and scales */
+.hero-image:hover {
+    transform: scale(1.1) translateY(-15px) rotate(2deg);
+    box-shadow: 10px 10px 30px rgba(2, 201, 12, 0.5);
+}
+
+/* Continuous Motion Effect */
+@keyframes motionEffect {
+    0% {
+        transform: translateX(0px) translateY(0px);
+    }
+    50% {
+        transform: translateX(10px) translateY(-10px);
+    }
+    100% {
+        transform: translateX(-10px) translateY(10px);
+    }
+}
+
 
 .resume-box {
     width: 200px;
@@ -464,6 +483,96 @@ body {
     margin-bottom: 2rem;
     text-align: center;
 }
+ /* Interest Section */
+ #interests {
+    padding: 60px 0;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 60px;
+  }
+  
+  /* Grid Layout */
+  .interest-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  /* Interest Item */
+  .interest-item {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(82, 223, 239, 0.1);
+    overflow: hidden;
+    transition: transform 0.4s, box-shadow 0.4s;
+    background-image: linear-gradient(#eea8f4,#7cd7ee);
+  }
+  
+  .interest-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 20px 40px rgba(236, 118, 118, 0.2);
+  }
+  
+  /* Reverse Order for Alternate Blocks */
+  .reverse {
+    flex-direction: row-reverse;
+  }
+  
+  /* Image Section */
+  .interest-image {
+    flex: 1;
+    overflow: hidden;
+  }
+  
+  .interest-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s;
+  }
+  
+  .interest-item:hover .interest-image img {
+    transform: scale(1.1);
+    filter: brightness(0.8);
+  }
+  
+  /* Text Section */
+  .interest-text {
+    flex: 1;
+    padding: 30px;
+  }
+  
+  .interest-text h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .interest-text p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .interest-item {
+      flex-direction: column;
+    }
+    .reverse {
+      flex-direction: column;
+    }
+  }
+  
 
 /* Contact Section */
 .contact-card {
